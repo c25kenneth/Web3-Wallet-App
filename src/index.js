@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MoralisProvider } from 'react-moralis';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MoralisProvider appId='lhTyBJZua76w8sSJpYTTIz2DkxaSQhMrtrzKsJ2l' serverUrl='https://wg4g2vyjt3rt.usemoralis.com:2053/server'>
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
+    </MoralisProvider>
+
   </React.StrictMode>
 );
 
